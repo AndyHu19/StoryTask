@@ -3,19 +3,6 @@
     <head>
         <title>Extracting Story Characters from A Given Short Story</title>
         <meta charset="utf-8">
-        <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script> -->
-        <!-- <script>
-            $(function(){
-                $.getJSON('story_01.json', function(data){
-                    console.log(data)
-                    var title1 = data.title;
-                    var text1 = data.text;
-                    var link1 = data.link;
-                    var tableRow1 = "<tr>" + "<td> Story 01: " + title1 + "</td>" + "</tr>";
-                    $(tableRow1).appendTo('#1');
-                });
-            });
-        </script> -->
         <style type="text/css">
             .my_highlight {
                 background-color: yellow;
@@ -36,6 +23,9 @@
 
         <form id="mturk_form" name="mturk_form">
             <div>
+                <table id = "1">
+                    
+                </table>
                 <script>
                     $(function(){
                         $.getJSON('story_01.json', function(data){
@@ -47,9 +37,6 @@
                         });
                     });
                 </script>
-                <table id = "1">
-                    
-                </table>
             </div>    
         </form>
     </body>
