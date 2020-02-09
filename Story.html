@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Extracting Story Characters from A Given Short Story</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+        <script>
+            $(function(){
+                $.getJSON('story_01.json', function(data){
+                    console.log(data)
+                    var title1 = data.title;
+                    var text1 = data.text;
+                    var link1 = data.link;
+                    var tableRow1 = "<tr>" + "<td> Story 01: " + title1 + "</td>" + "</tr>";
+                    $(tableRow1).appendTo('#1');
+                });
+            });
+        </script>
+        <style type="text/css">
+            .my_highlight {
+                background-color: yellow;
+                color: red;
+                font-weight: bold;
+            }
+    
+        </style>
+    </head>
+    <body>
+        <h1>Instruction</h1>
+        <ul>
+            <li>Please first read each story carefully.</li>
+            <li>After reading the story, please write down the <span class="my_highlight">number</span> of characters</li>
+            <li>Then please <span class="my_highlight">list the name of each character</span> and write a <span class="my_highlight">short description for each character</span> </li>
+            <li>Please write <span class="my_highlight">at least 10 words</span> for each description.</li>
+        </ul>
+
+        <form id="mturk_form" name="mturk_form">
+            <div>
+                <!-- <script>
+                    $(function(){
+                        $.getJSON('story_01.json', function(data){
+                            var title1 = data.title;
+                            var text1 = data.text;
+                            var link1 = data.link;
+                            var tableRow1 = "<tr>" + "<td> Story 01: " + title1 + "</td>" + "</tr>";
+                            $(tableRow1).appendTo('#1');
+                        });
+                    });
+                </script> -->
+                <table id = "1">
+                    
+                </table>
+            </div>    
+        </form>
+    </body>
+</html>
