@@ -22,22 +22,23 @@
         </ul>
 
         <form id="mturk_form" name="mturk_form">
-            <div>
-                <table id = "1">
-                    
-                </table>
-                <script>
-                    $(document).ready(function(){
-                        $.getJSON('story_01.json', function(data){
-                            var title1 = data.title;
-                            var text1 = data.text;
-                            var link1 = data.link;
-                            var tableRow1 = "<tr>" + "<td> Story 01: " + title1 + "</td>" + "</tr>";
-                            $(tableRow1).appendTo('#1');
-                        });
-                    });
-                </script>
-            </div>    
+            <script>
+                window.onload = function(){
+                    var url = "story_01.json"
+                    var request = new XMLHttpRequest();
+                    request.open("get", url);
+                    request.send(null);
+                    request.onload = function(){
+                        if (request.status == 200){
+                            var json = JSON.parse(request.responseText);
+                            var table1 = document.getElementById('1');
+                            table1.innerHTML = `Story 1: ${json.text}`;
+                            
+                        }
+                    }
+                }
+            </script>
+            <div id = "1"></div>    
         </form>
     </body>
 </html>
