@@ -33,15 +33,15 @@
                             var json = JSON.parse(request.responseText);
                             var table1 = document.getElementById('1');
                             table1.innerHTML = `Story 1: ${json.text}`;
-                            var table2 = document.getElementById('2');
-                            table2.innerHTML = `Link: ${json.link}`;
+                            var link = document.getElementById('2');
+                            link.href = json.link;
                             
                         }
                     }
                 }
             </script>
             <div id = "1"></div><br>
-            <div id = "2"></div><br>
+            <a id = "2" >Link Here</a><br>
             <div id = "3"><br>
                 Number of characters: <input type="number" name= "quantity">
             </div>
