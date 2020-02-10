@@ -33,12 +33,21 @@
                             var json = JSON.parse(request.responseText);
                             var table1 = document.getElementById('1');
                             table1.innerHTML = `Story 1: ${json.text}`;
+                            var table2 = document.getElementById('2');
+                            table2.innerHTML = `Link: ${json.link}`;
                             
                         }
                     }
                 }
             </script>
-            <div id = "1"></div>    
+            <div id = "1"></div>
+            <div id = "2"></div>
+            <div id = "3">
+                Number of characters: <input type="number" name= "quantity">
+            </div>
+            <div id = "4">
+                Description for each character:  <textarea rows="15" cols="50" name="sentence1" required></textarea>
+            </div>   
         </form>
     </body>
 </html>
